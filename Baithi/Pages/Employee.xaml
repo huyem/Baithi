@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="Baithi.Pages.Employee"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Baithi.Pages"
+    xmlns:model ="using:Baithi.Models"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Width="1000" Height="auto">
+        <RelativePanel>
+            <TextBlock x:Name="titell" Margin="40" Text="Employee List" FontSize="30" FontWeight="Black"/>
+            <ListView x:Name="listEmployee" Margin="10"  RelativePanel.Below="titell">
+                <ListView.ItemTemplate >
+                    <DataTemplate x:DataType="model:Employee">
+                        <ListViewItem >
+                            <RelativePanel>
+                                <TextBlock x:Name="name" Text="{x:Bind Name }" FontSize="20" Margin="10" />
+
+                                <TextBlock x:Name="role" Text="{x:Bind Role}" FontSize="20" Margin="10"   RelativePanel.RightOf="name"/>
+
+                                <TextBlock x:Name="birthdyear" Text="{x:Bind Birthyear}" FontSize="20" Margin="10"  RelativePanel.RightOf="role" />
+                            </RelativePanel>
+
+                        </ListViewItem>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </RelativePanel>
+       
+
+
+
+    </Grid>
+</Page>
